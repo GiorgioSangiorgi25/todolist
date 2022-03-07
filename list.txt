@@ -1,0 +1,12 @@
+task:
+obj{[]} è un place holder dove va scritta la task
+
+Assign:
+Arr[] di nomi. Assegna (.push) il valore selezionato (nome) all'oggetto task.
+
+Priority:
+Assegna (.push) a task ponendolo in condizione (if) di scelta di priorità su tre scale di colore
+
+Show/hide :
+
+è un'array di due valori che pone la codizione if() show/hide
