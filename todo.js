@@ -1,27 +1,31 @@
 const tasklist = [
   {
-    idtask: 1,
-    nametask: "task1",
-    userid: 3,
+    idTask: 1,
+    nameTask: "task1",
+    userId: 3,
     priorityId: 2,
+    completed: true,
   },
   {
     idtask: 2,
-    nametask: "task2",
-    userid: 1,
+    nameTask: "task2",
+    userId: 1,
     priorityId: 2,
+    completed: true,
   },
   {
-    idtask: 3,
-    nametask: "task3",
-    userid: 3,
+    idTask: 3,
+    nameTask: "task3",
+    userId: 3,
     priorityId: 1,
+    completed: false,
   },
   {
-    idtask: 4,
-    nametask: "task4",
-    userid: 2,
+    idTask: 4,
+    nameTask: "task4",
+    userd: 2,
     priorityId: 1,
+    completed: false,
   },
 ];
 
@@ -40,8 +44,8 @@ const priority = [
 
 const obj = {
   idtask: 2,
-  nametask: "task1",
-  userid: "Roberto",
+  nameTask: "task1",
+  userId: "Roberto",
   priority: "Low",
 };
 // FUNCTION
@@ -50,29 +54,10 @@ const addTask = (obj, tasklist) => {
   return newArray;
 };
 
-
 const remove = (id, tasklist) => {
   const newArray = tasklist.filter((idTask) => idTask.idTask !== id);
   return newArray;
 };
-
-// addTask(obj, tasklist);
-
-// const mapTask = remove(tasklist.idTask == 1, tasklist);
-
-// const mapTask2 = () => {
-//   const newArray = tasklist.filter((task) => task.idtask !== 3);
-//   return newArray;
-// };
-
-// console.log(remove(2, tasklist));
-
-// const mapTask3 = tasklist.filter((a)=> a.idtask ==! 2)
-
-// console.log(mapTask3)
-
-// update
-//
 
 const priorityFunc = (tasklist, priorityId) => {
   const newArray = tasklist.filter(
@@ -83,6 +68,16 @@ const priorityFunc = (tasklist, priorityId) => {
 
 const priorityFunc2 = priorityFunc(tasklist, 2);
 
-
-
 console.log(priorityFunc2);
+
+const modify = (tasklist, id, nuovoValore) => {
+  const newArray = tasklist.map((task) => {
+    if (task.idTask === id) {
+      task.nameTask = nuovoValore;
+    }
+  });
+  return newArray;
+};
+
+const ciaone = modify(tasklist, 4, "Ciao Sono Giorgio");
+console.log(ciaone, tasklist);
